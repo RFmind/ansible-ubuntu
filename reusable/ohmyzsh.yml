@@ -1,5 +1,5 @@
 ---
-- name: Ensure ash and git are installed
+- name: Ensure zsh and git are installed
   apt:
     name: "{{item}}"
     state: present
@@ -10,7 +10,7 @@
 
 - name: Clone oh-my-zsh
   git:
-    repo: git://github.com/robbyrussel/oh-my-zsh.git
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
     dest: ~/.oh-my-zsh
   become: no
 
