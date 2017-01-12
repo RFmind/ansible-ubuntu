@@ -21,7 +21,7 @@
         upgrade: safe
       become: yes
 
-    - name: Ensure Application are installed
+    - name: Ensure Applications are installed
       apt:
           name: "{{item}}"
           state: latest

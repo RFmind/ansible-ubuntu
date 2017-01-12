@@ -12,11 +12,13 @@
   git:
     repo: git://github.com/robbyrussel/oh-my-zsh.git
     dest: ~/.oh-my-zsh
+  become: no
 
 - name: Create new ~/.zshrc
   copy:
     src: ~/oh-my-zsh/templates/zshrc.zsh-template
     dest: ~/.zshrc
+  become: no
 
 - name: Change shell
   command: chsh -s /bin/zsh

@@ -9,14 +9,17 @@
   file:
     path: ~/.config/nvim
     state: directory
+  become: no
 
 - name: Clone neovim config
   git:
     repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/neovimconfig
     dest: ~/Code/neovimconfig
+  become: no
 
 - name: Copy neovim config
   copy:
     src: ~/Code/neovimconfig/init.vim
     dest: ~/.config/nvim/init.vim
+  become: no
 

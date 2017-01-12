@@ -7,7 +7,9 @@
 
 - name: git email global config
   shell: git config --global user.email "RFmind@gmail.com"
+  become: no
 
 - name: git user global config
   shell: git config --global user.name "Ruslan Filimonov"
+  become: no
 
