@@ -31,6 +31,8 @@
       apt:
           name: "{{item}}"
           state: latest
+      with_items: "{{applications}}"
+      become: yes
 
     - name: Ensure git installation and configuration
       include: reusable/git.yml
@@ -54,3 +56,5 @@
       file:
         path: "{{item}}"
         state: directory
+      with_items: "{{directories}}"
+
