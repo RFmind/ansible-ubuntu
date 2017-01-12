@@ -17,6 +17,12 @@
     state: directory
   become: no
 
+- name: Ensure .xmonad directory exists
+  file:
+    path: ~/Code
+    state: directory
+  become: no
+
 - name: Clone xmonad config
   git:
     repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/xmonadconfig
