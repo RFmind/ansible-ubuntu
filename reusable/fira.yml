@@ -1,0 +1,13 @@
+---
+- name: Ensure .fonts directory exists
+  file:
+    path: ~/.fonts
+    state: directory
+  become: no
+
+- name: Clone fira repository
+  git:
+    repo: https://github.com/carrois/Fira.git
+    dest: ~/.fonts
+  become: no
+
