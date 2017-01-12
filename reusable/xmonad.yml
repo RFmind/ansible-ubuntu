@@ -19,7 +19,7 @@
 
 - name: Ensure .xmonad directory exists
   file:
-    path: ~/Code
+    path: ~/.xmonad
     state: directory
   become: no
 
