@@ -15,6 +15,9 @@
       - zathura
     directories:
       - ~/Notes
+      - ~/Code
+      - ~/Pictures/Wallpapers
+      - ~/Documents/Books
     
   tasks:
     - name: Ensure Up-to-date system
@@ -30,10 +33,11 @@
       with_items: "{{applications}}"
       become: yes
 
-    - name: Ensure Code directory exists
+    - name: Ensure needed directories exist
       file:
-        path: ~/Code
+        path: "{{item}}"
         state: directory
+      with_items: "{{directories}}"
 
     - name: Ensure git installation and configuration
       include: reusable/git.yml
@@ -55,10 +59,4 @@
 
     - name: Ensure vivaldi installation
       include: reusable/vivaldi.yml
-
-    - name: Ensure directories exist
-      file:
-        path: "{{item}}"
-        state: directory
-      with_items: "{{directories}}"
 
