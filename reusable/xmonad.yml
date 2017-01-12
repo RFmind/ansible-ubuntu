@@ -44,7 +44,7 @@
 - name: Copy wallpaper
   copy:
     src: ~/Code/xmonadconfig/abstract-wallpaper.png
-    dest: ~/Pictures/Wallapers/abstract-wallpaper.png
+    dest: ~/Pictures/Wallpapers/abstract-wallpaper.png
   become: no
 
 - name: Recompile xmonad
