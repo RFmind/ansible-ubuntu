@@ -5,6 +5,17 @@
     state: present
   become: yes
 
+- name: Ensure neovim ppa is added
+  apt_repository:
+    repo: ppa:neovim-ppa/unstable
+  become: yes
+
+- name: Ensure neovim is installed
+  apt:
+    name: neovim
+    update_cache: yes
+  become: yes
+
 - name: Ensure .config/nvim directory exists
   file:
     path: ~/.config/nvim
