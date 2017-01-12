@@ -1,9 +1,4 @@
 ---
-- name: Ensure Code directory exists
-  file:
-    path: ~/Code
-    state: directory
-
 - name: Download rustup script
   get_url:
       url: https://sh.rustup.rs

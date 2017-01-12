@@ -30,6 +30,11 @@
       with_items: "{{applications}}"
       become: yes
 
+    - name: Ensure Code directory exists
+      file:
+        path: ~/Code
+        state: directory
+
     - name: Ensure git installation and configuration
       include: reusable/git.yml
 
