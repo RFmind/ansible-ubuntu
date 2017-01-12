@@ -20,13 +20,13 @@
 
 - name: Add go bin directory to path for all users
   copy:
-    src: ~/Code/go-bin.sh
+    src: ~/Code/gopathsetup/go-bin.sh
     dest: /etc/profile.d
   become: yes
 
 - name: Set gopath for all users
   copy:
-    src: ~/Code/go-path.sh
+    src: ~/Code/gopathsetup/go-path.sh
     dest: /etc/profile.d
   become: yes
 
