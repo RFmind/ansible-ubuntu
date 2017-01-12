@@ -37,6 +37,12 @@
 
 - name: Copy xmonad config
   copy:
+    src: ~/Code/xmonadconfig/xmonad.hs
+    dest: ~/.xmonad/xmonad.hs
+  become: no
+
+- name: Copy xrandr config
+  copy:
     src: ~/Code/xmonadconfig/xrandr-script-ubuntu.sh
     dest: ~/.xmonad/xrandr-script.sh
   become: no
