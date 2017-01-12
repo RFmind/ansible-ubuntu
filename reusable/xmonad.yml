@@ -23,6 +23,12 @@
     state: directory
   become: no
 
+- name: Ensure Wallpapers directory exists
+  file:
+    path: ~/Pictures/Wallpapers
+    state: directory
+  become: no
+
 - name: Clone xmonad config
   git:
     repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/xmonadconfig
