@@ -11,12 +11,12 @@
 - name: Clone oh-my-zsh
   git:
     repo: git://github.com/robbyrussell/oh-my-zsh.git
-    dest: ~/.oh-my-zsh
+    dest: ~/Code/oh-my-zsh
   become: no
 
 - name: Create new ~/.zshrc
   copy:
-    src: ~/oh-my-zsh/templates/zshrc.zsh-template
+    src: ~/Code/oh-my-zsh/templates/zshrc.zsh-template
     dest: ~/.zshrc
   become: no
 
