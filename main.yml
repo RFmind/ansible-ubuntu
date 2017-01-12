@@ -3,7 +3,6 @@
 
   vars:
     applications:
-      - vivaldi
       - thunar
       - vlc
       - avidemux-qt
@@ -51,6 +50,9 @@
 
     - name: Ensure neovim installation and configuration
       include: reusable/neovim.yml
+
+    - name: Ensure vivaldi installation
+      include: reusable/vivaldi.yml
 
     - name: Ensure directories exist
       file:
