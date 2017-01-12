@@ -5,12 +5,9 @@
     applications:
       - thunar
       - vlc
-      - avidemux-qt
       - docker
-      - docker-machine
       - docker-compose
       - htop
-      - transmission-gtk
       - vagrant
       - virtualbox
       - winff
