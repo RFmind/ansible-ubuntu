@@ -13,6 +13,11 @@
     copy: no
   become: yes
 
+- name: Ensure Code path exists
+  file:
+    path: ~/Code
+    state: directory
+
 - name: Clone gopathsetup
   git:
     repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/gopathsetup
