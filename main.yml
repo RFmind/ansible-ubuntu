@@ -33,11 +33,20 @@
       with_items: "{{applications}}"
       become: yes
 
-    - name: Ensure needed directories exist
+    - name: Ensure Code dir exists
       file:
-        path: "{{item}}"
+        path: ~/Code
         state: directory
-      with_items: "{{directories}}"
+
+    - name: Ensure Notes dir exists
+      file:
+        path: ~/Notes
+        state: directory
+
+    - name: Ensure Pictures/Wallpapers dir exists
+      file:
+        path: ~/Pictures/Wallpapers
+        state: directory
 
     - name: Ensure git installation and configuration
       include: reusable/git.yml
