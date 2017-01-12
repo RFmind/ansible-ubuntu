@@ -13,11 +13,6 @@
       - winff
       - youtube-dl
       - zathura
-    directories:
-      - ~/Notes
-      - ~/Code
-      - ~/Pictures/Wallpapers
-      - ~/Documents/Books
     
   tasks:
     - name: Ensure Up-to-date system
@@ -37,16 +32,19 @@
       file:
         path: ~/Code
         state: directory
+        mode: 0755
 
     - name: Ensure Notes dir exists
       file:
         path: ~/Notes
         state: directory
+        mode: 0755
 
     - name: Ensure Pictures/Wallpapers dir exists
       file:
         path: ~/Pictures/Wallpapers
         state: directory
+        mode: 0755
 
     - name: Ensure git installation and configuration
       include: reusable/git.yml
