@@ -32,19 +32,19 @@
       file:
         path: ~/Code
         state: directory
-        mode: 0755
+      become: no
 
     - name: Ensure Notes dir exists
       file:
         path: ~/Notes
         state: directory
-        mode: 0755
+      become: no
 
     - name: Ensure Pictures/Wallpapers dir exists
       file:
         path: ~/Pictures/Wallpapers
         state: directory
-        mode: 0755
+      become: no
 
     - name: Ensure git installation and configuration
       include: reusable/git.yml
