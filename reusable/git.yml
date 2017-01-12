@@ -1,0 +1,13 @@
+---
+- name: Ensure git installation
+  apt:
+    name: git
+    state: present
+  become: yes
+
+- name: git email global config
+  shell: git config --global user.email "RFmind@gmail.com"
+
+- name: git user global config
+  shell: git config --global user.name "Ruslan Filimonov"
+

@@ -1,0 +1,36 @@
+---
+- name: Ensure installation of needed packages
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - mercurial
+    - xmonad
+    - libghc-xmonad-contrib-dev
+    - suckless-tools
+    - feh
+  become: yes
+
+- name: Ensure Code directory exists
+  file:
+    path: ~/Code
+    state: directory
+
+- name: Clone xmonad config
+  git:
+    repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/xmonadconfig
+    dest: ~/Code/xmonadconfig
+
+- name: Copy xmonad config
+  copy:
+    src: ~/Code/xmonadconfig/xrandr-script-ubuntu.sh
+    dest: ~/.xmonad/xrandr-script.sh
+
+- name: Copy wallpaper
+  copy:
+    src: ~/Code/xmonadconfig/abstract-wallpaper.png
+    dest: ~/Pictures/Wallapers/abstract-wallpaper.png
+
+- name: Recompile xmonad
+  command: xmonad --recompile
+

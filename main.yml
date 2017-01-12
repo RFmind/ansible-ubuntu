@@ -1,0 +1,56 @@
+---
+- hosts: all
+
+  vars:
+    applications:
+      - vivaldi
+      - thunar
+      - vlc
+      - avidemux-qt
+      - docker
+      - docker-machine
+      - docker-compose
+      - htop
+      - transmission-gtk
+      - vagrant
+      - virtualbox
+      - winff
+      - youtube-dl
+      - zathura
+    directories:
+      - ~/Notes
+    
+    tasks:
+      - name: Ensure Up-to-date system
+        apt:
+          update_cache: yes
+          upgrade: safe
+        become: yes
+
+      - name: Ensure Application are installed
+        apt:
+            name: "{{item}}"
+            state: latest
+
+      - name: Ensure git installation and configuration
+        include: reusable/git.yml
+
+      - name: Ensure rust installation and configuration
+        include: reusable/rust.yml
+
+      - name: Ensure golang installation and configuration
+        include: reusable/golang.yml
+
+      - name: Ensure xmonad installation and configuration
+        include: reusable/xmonad.yml
+
+      - name: Ensure oh-my-zsh setup
+        include: reusable/ohmyzsh.yml
+
+      - name: Ensure neovim installation and configuration
+        include: reusable/neovim.yml
+
+      - name: Ensure directories exist
+        file:
+          path: "{{item}}"
+          state: directory

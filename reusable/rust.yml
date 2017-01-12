@@ -1,0 +1,9 @@
+---
+- name: Download rustup script
+  get_url:
+      url: https://sh.rustup.rs
+      dest: ~/Code/install-rust
+
+- name: Install latest stable rust
+  command: sh ~/Code/install-rust -y
+
