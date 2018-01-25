@@ -16,7 +16,7 @@
 
 - name: Create new ~/.zshrc
   copy:
-      src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+    src: ~/.oh-my-zsh/templates/zshrc.zsh-template
     dest: ~/.zshrc
   become: no
 

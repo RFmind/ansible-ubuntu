@@ -3,6 +3,7 @@
   get_url:
       url: https://sh.rustup.rs
       dest: ~/Code/install-rust
+      validate_certs: no
   become: no
 
 - name: Install latest stable rust
