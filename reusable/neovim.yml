@@ -5,11 +5,6 @@
     state: present
   become: yes
 
-- name: Ensure neovim ppa is added
-  apt_repository:
-    repo: ppa:neovim-ppa/unstable
-  become: yes
-
 - name: Ensure neovim is installed
   apt:
     name: neovim
@@ -22,15 +17,27 @@
     state: directory
   become: no
 
+- name: Ensure .config/nvim/autoload directory exists
+  file:
+    path: ~/.config/nvim/autoload
+    state: directory
+  become: no
+
 - name: Clone neovim config
   git:
-    repo: https://ruslan_filimonov@bitbucket.org/ruslan_filimonov/neovimconfig
+    repo: https://github.com/rfmind/neovimconfig.git
     dest: ~/Code/neovimconfig
   become: no
 
-- name: Copy neovim config
+- name: Copy neovim init file
   copy:
     src: ~/Code/neovimconfig/init.vim
     dest: ~/.config/nvim/init.vim
+  become: no
+
+- name: Copy neovim plug file
+  copy:
+    src: ~/Code/neovimconfig/autoload/plug.vim
+    dest: ~/.config/nvim/autoload/plug.vim
   become: no
 

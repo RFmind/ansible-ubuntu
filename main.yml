@@ -55,15 +55,15 @@
     - name: Ensure golang installation and configuration
       include: reusable/golang.yml
 
-    - name: Ensure xmonad installation and configuration
-      include: reusable/xmonad.yml
-
     - name: Ensure oh-my-zsh setup
       include: reusable/ohmyzsh.yml
+
+    - name: Ensure fira font is installed
+      include: reusable/fira.yml
 
     - name: Ensure neovim installation and configuration
       include: reusable/neovim.yml
 
-    - name: Ensure vivaldi installation
-      include: reusable/vivaldi.yml
+    - name: Ensure i3 installation and configuration
+      include: reusable/i3.yml
 
