@@ -1,18 +1,9 @@
 ---
-- name: Ensure Installation of needed packages
+- name: Ensure Installation of i3
   apt:
-    name: "{{item}}"
+    name: "i3"
     state: present
-  with_items:
-    - i3
-    - nitrogen
   become: yes
-
-- name: Ensure Code directory exists
-  file:
-    path: ~/Code
-    state: directory
-  become: no
 
 - name: Ensure .config/i3 directory exists
   file:
@@ -23,12 +14,6 @@
 - name: Ensure .config/i3status directory exists
   file:
     path: ~/.config/i3status
-    state: directory
-  become: no
-
-- name: Ensure wallpapers directory exists
-  file:
-    path: ~/Pictures/Wallpapers
     state: directory
   become: no
 

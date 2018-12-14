@@ -1,11 +1,8 @@
 ---
-- name: Ensure zsh and git are installed
+- name: Ensure zsh is installed
   apt:
-    name: "{{item}}"
+    name: "zsh"
     state: present
-  with_items:
-    - zsh
-    - git
   become: yes
 
 - name: Clone oh-my-zsh

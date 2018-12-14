@@ -1,0 +1,7 @@
+---
+- name: Ensure ruby-full is installed (no rbenv atm)
+  apt:
+    name: ruby-full
+    state: present
+  become: yes
+

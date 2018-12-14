@@ -1,0 +1,13 @@
+---
+apps_to_install:
+  - thunar
+  - vlc
+  - htop
+  - winff
+  - youtube-dl
+  - zathura
+  - inkscape
+  - gimp
+  - sl
+  - cmatrix
+  - nitrogen
