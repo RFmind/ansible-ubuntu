@@ -5,9 +5,16 @@
     state: directory
   become: no
 
-- name: Clone fira repository
+- name: Clone firacode repository
   git:
-    repo: https://github.com/carrois/Fira.git
-    dest: ~/.fonts
+    repo: https://github.com/tonsky/FiraCode.git
+    dest: ~/.fonts/FiraCode
   become: no
+
+- name: Clone fire repository
+  git:
+    repo: https://github.com/mozilla/Fira.git
+    dest: ~/.fonts/Fira
+  become: no
+
 
