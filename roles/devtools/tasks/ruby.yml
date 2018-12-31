@@ -7,6 +7,12 @@
     state: present
   become: yes
 
+- name: Ensure MRuby installation
+  apt:
+    name:
+      - mruby
+      - libmruby-dev
+
 - name: Ensure Ruby simple2d installation
   apt:
     name:
